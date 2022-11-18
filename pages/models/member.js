@@ -2,7 +2,7 @@
 
 import mongoose from 'mongoose';
 
-const member = new mongoose.Schema({
+const memberSchema = new mongoose.Schema({
 
     name: {
         type: String,
@@ -24,7 +24,5 @@ const member = new mongoose.Schema({
     versionKey: false //here
 });
 
-const members = mongoose.model('sandipl', member);
-module.exports = members;
-
-
+//It check first it that model is already present then no  need to create again (mongoose.models.name_of_the_model)
+module.exports = mongoose.models.Member || mongoose.model('Member', memberSchema);
