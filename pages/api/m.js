@@ -1,42 +1,32 @@
 
 
-const member = require('../models/member');
-
+const Member = require('../models/member');
 
 import connectMongo from "../../utils/connectMongo"
 
 
-// import Urls from "../models/urls"
 export default async (req, res) => {
 
-    const dbdata = await connectMongo();
+    connectMongo();
 
-    // const urllist = await Urls.find();
-
-    let response = await member.create({
+    //For create
+    let response = await Member.create({
         name: "Sandip",
         phone: "1111111",
         status: "active"
     });
+    console.log('created', response)
 
 
-    console.log('ddddddddddddddddd', response)
+    //To fetch
+    let allData = await Member.find({});
 
     return res.status(200).json(
         {
             success: true,
-            data: response
+            new: response,
+            allData: allData
         }
     );
 }
 
-
-// const memberController = {
-
-
-//     create: async (req, res) => {
-
-
-
-//     }
-// }
