@@ -11,8 +11,8 @@ export default async (req, res) => {
 
     //For create
     let response = await Member.create({
-        name: "Sandip",
-        phone: "1111111",
+        email: "Sandip",
+        password: "1111111",
         status: "active"
     });
     console.log('created', response)

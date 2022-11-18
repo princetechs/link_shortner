@@ -4,13 +4,13 @@ import mongoose from 'mongoose';
 
 const memberSchema = new mongoose.Schema({
 
-    name: {
+    email: {
         type: String,
         required: true,
-        // unique: true,
+        unique: true,
     },
 
-    phone: {
+    password: {
         type: String,
     },
 
