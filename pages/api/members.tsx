@@ -11,7 +11,7 @@ export default async (req, res) => {
 
     //For create
     let response = await Member.create({
-        email: "Sandip",
+        email: "Sandip@sad",
         password: "1111111",
         status: "active"
     });
