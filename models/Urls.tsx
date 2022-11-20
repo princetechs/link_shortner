@@ -1,16 +1,19 @@
 
 import mongoose from 'mongoose';
 
-const memberSchema = new mongoose.Schema({
+const urlSchema = new mongoose.Schema({
 
-    email: {
+    url: {
         type: String,
         required: true,
         unique: true,
     },
 
-    password: {
+    gen_url: {
         type: String,
+        required: true,
+        unique: true,
+
     },
 
     status: {
@@ -24,4 +27,5 @@ const memberSchema = new mongoose.Schema({
 });
 
 //It check first it that model is already present then no  need to create again (mongoose.models.name_of_the_model)
-module.exports = mongoose.models.Member || mongoose.model('Member', memberSchema);
+const Urls_model=mongoose.models.Urls || mongoose.model('Urls', urlSchema);
+export default Urls_model
