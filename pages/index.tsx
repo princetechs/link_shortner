@@ -9,7 +9,7 @@ export default function index() {
 
 
 const url = useInput("");
-const handleClick=(e)=>
+const handleClick=(e:any)=>
 {
   e.preventDefault()
   console.log(url.value);
@@ -45,7 +45,7 @@ return (
           type="text"
         />
 
-        <Button kind="elevated" onClick={handleClick} showArrow size='small' >Generate</Button>
+        <Button kind="elevated"  showArrow size='small' >Generate</Button>
 
 
 

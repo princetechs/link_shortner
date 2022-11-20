@@ -6,7 +6,7 @@ import Member from "../../models/member";
 import connectMongo from "../../utils/connectMongo"
 
 
-export default async (req, res) => {
+export default async (req :any, res :any) => {
 
     connectMongo();
 

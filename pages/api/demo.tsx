@@ -3,7 +3,7 @@ import connectMongo from '../../utils/connectMongo'
 import Urls_model from '../../models/Urls';
 
 
-export default async (req, res) => {
+export default async (req :any, res :any) => {
 
   connectMongo();
 

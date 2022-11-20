@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function useinput(initialValue) {
+export default function useinput(initialValue: any) {
 
     const [value, setValue] = useState(initialValue);
     
-    const handleChange = (event) => {
+    const handleChange = (event :any) => {
         setValue(event.target.value);
         
     };
