@@ -1,6 +1,7 @@
 
 
-const Member = require('../models/member');
+// const Member = require('../models/member');
+import Member from "../../models/member";
 
 import connectMongo from "../../utils/connectMongo"
 
@@ -11,7 +12,7 @@ export default async (req, res) => {
 
     //For create
     let response = await Member.create({
-        email: "Sandip@sad",
+        email: "dsdmkafkadfnda@sad",
         password: "1111111",
         status: "active"
     });
