@@ -1,6 +1,6 @@
 
 import connectMongo from '../../utils/connectMongo'
-import Urls_model from '../../models/Urls';
+import Urls_model from '../../models/urls';
 
 
 export default async (req :any, res :any) => {
