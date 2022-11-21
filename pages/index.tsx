@@ -1,21 +1,17 @@
 import React, { useState,useRef } from 'react';
 import { InputField,Button } from '@cred/neopop-web/lib/components';
 import useInput from '../hooks/useinput';
-import Urls_model from '../models/Urls';
-import Member from '../models/member';
+// import Urls_model from '../models/Urls';
+// import Member from '../models/member';
 
 
 export default function index() {
-
-
 const url = useInput("");
+
 const handleClick=(e:any)=>
 {
   e.preventDefault()
   console.log(url.value);
-  
-
-
 }
 
 
@@ -45,7 +41,7 @@ return (
           type="text"
         />
 
-        <Button kind="elevated"  showArrow size='small' >Generate</Button>
+        <Button kind="elevated" onClick={()=>handleClick} showArrow size='small' >Generate</Button>
 
 
 

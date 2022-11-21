@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useinput(initialValue: any) {
+export default function useinput(initialValue : any) {
 
     const [value, setValue] = useState(initialValue);
     
