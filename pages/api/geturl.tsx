@@ -24,9 +24,9 @@ export default async (req: any, res: any) => {
 
   if (req.method != "POST") {
     return res.status(400).json({
-        success: true,
+        success: false,
         error: "Invalid Request",
-        data: data,
+        data: [],
       });
   }
 
@@ -34,9 +34,9 @@ export default async (req: any, res: any) => {
   let url = req.body.url ? req.body.url : "";
   if (!url) {
     return res.status(400).json({
-        success: true,
+        success: false,
         error: "URL Not found in body",
-        data: data,
+        data: [],
       });
   }
 
