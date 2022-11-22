@@ -2,7 +2,7 @@ import connectMongo from "../../utils/connectMongo";
 import Urls_model from "../../models/urls";
 var randomstring = require("randomstring");
 
-const generateUniqueLink = async (shortUrlLink) => {
+const generateUniqueLink = async (shortUrlLink :any) => {
   let urlResponse = await Urls_model.findOne({ shortUrlLink: shortUrlLink });
 
   if (urlResponse) {
@@ -13,7 +13,7 @@ const generateUniqueLink = async (shortUrlLink) => {
   return shortUrlLink;
 };
 
-function isValidURL(string) {
+function isValidURL(string : any) {
     var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
     return (res !== null)
   };
