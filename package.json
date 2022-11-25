@@ -8,6 +8,7 @@
   "dependencies": {
     "@babel/core": "^7.20.2",
     "@cred/neopop-web": "^1.0.0",
+    "axios": "^1.1.3",
     "llama-forms-react": "^1.1.9",
     "mongoose": "^6.7.2",
     "next": "latest",
