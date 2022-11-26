@@ -25,7 +25,12 @@ export default function index() {
   };
 
   const getShortUrl = async (e) => {
+
     e.preventDefault();
+    if (!url) {
+      setError("Please provide a valid url");
+      return;
+    }
 
     const options = {
       url: "http://localhost:3000/api/geturl",
@@ -54,7 +59,7 @@ export default function index() {
         setError(
           err.response?.data?.error
             ? err.response?.data?.error
-            : "Something wait wrong"
+            : "Something went wrong"
         );
       });
   };
