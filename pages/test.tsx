@@ -19,6 +19,11 @@ export default function index() {
 
   const [shortUrl, setShortUrl] = useState();
 
+  const resetToDefault = () => {
+    // e.preventDefault();
+    setShortUrl(false);
+  };
+
   const getShortUrl = async (e) => {
     e.preventDefault();
 
@@ -36,9 +41,13 @@ export default function index() {
 
     axios(options)
       .then((response) => {
-        console.log("response", response.data.data );
-        setError('');
-        setShortUrl(response.data.data.shortUrl ?  `linkhub.com/${response.data.data.shortUrl}` : '' )
+        console.log("response", response.data.data);
+        setError("");
+        setShortUrl(
+          response.data.data.shortUrl
+            ? `linkhub.com/${response.data.data.shortUrl}`
+            : ""
+        );
       })
       .catch((err) => {
         console.log("errrr", err.response.data);
@@ -59,7 +68,11 @@ export default function index() {
               Paste the URL to be shortened
             </h1>
 
-            {error ? <div className="error text-center  text-white py-2">{error}</div> : ""}
+            {error ? (
+              <div className="error text-center  text-white py-2">{error}</div>
+            ) : (
+              ""
+            )}
 
             {shortUrl ? (
               <>
@@ -77,29 +90,39 @@ export default function index() {
                       className="bg-white text-black text-base rounded-lg px-4 py-3"
                       onClick={() => CopyValue("hello")}
                     >
-                      Copy URL
+                      Copy
+                    </button>
+                  </div>
+                  <div className=" flex items-center rounded-lg ">
+                    <button
+                      className="bg-white text-black text-base rounded-lg px-4 py-3"
+                      onClick={resetToDefault}
+                    >
+                      Reset
                     </button>
                   </div>
                 </div>
               </>
             ) : (
-              <div className="flex flex-col sm:flex-row  items-center rounded-lg overflow-hidden justify-between gap-2">
-                <input
-                  className="text-base w-full sm:w-9/12 bg-white py-3 rounded-md text-gray-400 flex-grow outline-none px-2 "
-                  type="text"
-                  placeholder="Paste your link here"
-                  value={url ? url : ""}
-                  onChange={(e) => setUrl(e.target.value)}
-                />
-                <div className=" flex items-center rounded-lg ">
-                  <button
-                    className="bg-white text-black text-base rounded-lg px-4 py-3"
-                    onClick={getShortUrl}
-                  >
-                    Shorten URL
-                  </button>
+              <>
+                <div className="flex flex-col sm:flex-row  items-center rounded-lg overflow-hidden justify-between gap-2">
+                  <input
+                    className="text-base w-full sm:w-9/12 bg-white py-3 rounded-md text-gray-400 flex-grow outline-none px-2 "
+                    type="text"
+                    placeholder="Paste your link here"
+                    value={url ? url : ""}
+                    onChange={(e) => setUrl(e.target.value)}
+                  />
+                  <div className=" flex items-center rounded-lg ">
+                    <button
+                      className="bg-white text-black text-base rounded-lg px-4 py-3"
+                      onClick={getShortUrl}
+                    >
+                      Shorten URL
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </>
             )}
           </div>
         </div>
