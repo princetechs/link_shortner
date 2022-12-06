@@ -19,7 +19,7 @@ export default function index() {
 
   const [shortUrl, setShortUrl] = useState();
 
-  const getShortUrl = async (e) => {
+  const getShortUrl = async (e :any) => {
     e.preventDefault();
 
     const options = {
