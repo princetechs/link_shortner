@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 
+
+const db_url = `mongodb+srv://sandip282:pxExh1ymChe6OPKr@testmongo.baasqpu.mongodb.net/kahnu_test?retryWrites=true&w=majority`;
+
 const connect = () => {
 
     //check if it is already connected to database
@@ -8,7 +11,7 @@ const connect = () => {
         return;
     }
 
-    mongoose.connect(process.env.KANHU_DB);
+    mongoose.connect(process.env.KANHU_DB ? process.env.KANHU_DB : db_url);
 
     mongoose.connection.on('connected', ()=>{
         console.log('connected successfully');
