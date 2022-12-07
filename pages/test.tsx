@@ -38,14 +38,14 @@ export default function index() {
       .then((response) => {
         console.log("response", response.data.data );
         setError('');
-        setShortUrl(response.data.data.shortUrl ?  `linkhub.com/${response.data.data.shortUrl}` : '' )
+        setShortUrl(response.data.data.shortUrl ?  `http://localhost:3000/s/${response.data.data.shortUrl}` : '' )
       })
       .catch((err) => {
         console.log("errrr", err.response.data);
         setError(
           err.response?.data?.error
             ? err.response?.data?.error
-            : "Something wait wrong"
+            : "Something went wrong"
         );
       });
   };

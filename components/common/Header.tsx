@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { Session } from 'inspector'
-
+import Avtar from './avtar'
 export default function Header() {
 	const { data: Session } = useSession()
 	const [setSignOut, setSetSignOut] = useState(true)
@@ -31,20 +31,8 @@ export default function Header() {
 					</ul>
 				</div>
 				<div className="items-center flex-shrink-0 hidden lg:flex">
-
-					{Session && Session.user ?
-						<div>
-							<svg onClick={() => setSetSignOut(!setSignOut)} xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
-								<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-							</svg>
-
-							{setSignOut && <button className='px-auto py-auto' onClick={() => signOut()}>Sign out</button>}
-						</div>
-						:
-						<button onClick={() => signIn("google")}>Sign in with </button>
-					}
+				<Avtar/>	
 				</div>
-
 				<button className="p-4 lg:hidden">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-100">
 						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
