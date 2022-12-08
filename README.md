@@ -13,5 +13,3 @@ Then
  - Step_3:- `pnpm run dev`    This cmd  run in development.
 
 We are using pnpm to  make the build speed.Know more about [PNPM](https://pnpm.io/)
-
-test
