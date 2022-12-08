@@ -29,7 +29,7 @@ return (
               colorMode="light"
               id="text_field"
               inputMode="text"
-              label="Past Url Here"
+              label="Paste Url Here"
               maxLength={30}
               onBlur={function noRefCheck() { }}
               // onChange={function noRefCheck() { }}
