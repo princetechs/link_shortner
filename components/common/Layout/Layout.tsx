@@ -3,7 +3,7 @@ import React from 'react'
 
 import HeaderNav from '../HeaderNav'
 
-export default function Layout({ children, ...pageProps}) {
+export default function Layout(  {children}:{children:React.ReactElement}) {
   return (
     <>
     <HeaderNav/>
