@@ -1,10 +1,13 @@
 import React from 'react'
-import Header from '../Header'
+// import Header from '../Header'
+
+import HeaderNav from '../HeaderNav'
 
 export default function Layout({ children, ...pageProps}) {
   return (
     <>
-    <Header/>
+    <HeaderNav/>
+    {/* <Header/> */}
     <main>{children}</main>
 
     </>
