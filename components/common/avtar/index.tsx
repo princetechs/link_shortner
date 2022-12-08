@@ -5,7 +5,7 @@ import Card from './card'
 export default function avtar() {
 
 	const { data: Session } = useSession()
-	const [setSignOut, setSetSignOut] = useState(true)
+	const [setSignOut, setSetSignOut] = useState(false)
 	return (
         <>
                 {Session && Session.user ?
