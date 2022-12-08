@@ -3,10 +3,10 @@ import React, { useState, useRef } from "react";
 // import useInput from "../hooks/useinput";
 // import Urls_model from '../models/Urls';
 // import Member from '../models/member';
-
+import Layout from "../components/common/Layout";
 import axios from "axios";
 
-export default function index() {
+export default function test() {
   function CopyValue(element) {
     var copyText = document.getElementById(element);
     copyText.select();
@@ -107,3 +107,4 @@ export default function index() {
     </>
   );
 }
+test.Layout = Layout;
