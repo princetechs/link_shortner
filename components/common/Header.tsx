@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { Session } from 'inspector'
 import Link from 'next/link'
-
 import Avtar from './avtar'
+
 export default function Header() {
+
 	const { data: Session } = useSession()
-	const [setSignOut, setSetSignOut] = useState(true)
+	const [setSignOut, setSetSignOut] = useState(false)
 	return (
 		<header className="p-4 ring-1 ring-gray-300 fixed w-full dark:bg-gray-800 dark:text-gray-100">
 			<div className="container  flex justify-between h-16 mx-auto">
@@ -19,21 +20,29 @@ export default function Header() {
 					</Link>
 					<ul className="items-stretch hidden space-x-3 lg:flex">
 						<li className="flex">
-							<Link href="/profile" rel="noopener noreferrer" className="flex items-center px-4 -mb-1 transition duration-150 border-b-2 border-transparent hover:border-purple-500">My Profiles</Link>
+							<Link href="/profile" rel="noopener noreferrer" className="flex items-center px-4 -mb-1">
+								<span className='py-3 hover:transition duration-150 border-b-2 border-transparent hover:border-gray-700'>My Profiles</span>
+							</Link>
 						</li>
 						<li className="flex">
-						<Link href="/test" rel="noopener noreferrer" className="flex items-center px-4 -mb-1 transition duration-150 border-b-2 border-transparent hover:border-purple-500">My Links</Link>
+							<Link href="/test" rel="noopener noreferrer" className="flex items-center px-4 -mb-1">
+								<span className='py-3 hover:transition duration-150 border-b-2 border-transparent hover:border-gray-700'>My Links</span>
+							</Link>
 						</li>
 						<li className="flex">
-						<Link href="/test" rel="noopener noreferrer" className="flex items-center px-4 -mb-1 transition duration-150 border-b-2 border-transparent hover:border-purple-500">Test</Link>
+							<Link href="/test" rel="noopener noreferrer" className="flex items-center px-4 -mb-1 ">
+								<span className=' py-3 hover:transition duration-150 border-b-2 border-transparent hover:border-gray-700'>Test</span>
+							</Link>
 						</li>
 						<li className="flex">
-						<Link href="https://github.com/princetechs/link_shortner/tree/development" rel="noopener noreferrer" className="flex items-center px-4 -mb-1 transition duration-150 border-b-2 border-transparent hover:border-purple-500">Links</Link>
+							<Link href="https://github.com/princetechs/link_shortner" rel="noopener noreferrer" className="flex items-center px-4 -mb-1 ">
+								<span className=' py-3 hover:transition duration-150 border-b-2 border-transparent hover:border-gray-700'>Links</span>
+							</Link>
 						</li>
 					</ul>
 				</div>
 				<div className="items-center flex-shrink-0 hidden lg:flex">
-				<Avtar/>	
+					<Avtar />
 				</div>
 				<button className="p-4 lg:hidden">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-100">
@@ -41,5 +50,6 @@ export default function Header() {
 					</svg>
 				</button>
 			</div>
-		</header>)
+		</header>
+	)
 }
