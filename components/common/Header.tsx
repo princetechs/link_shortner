@@ -25,7 +25,7 @@ export default function Header() {
 							</Link>
 						</li>
 						<li className="flex">
-							<Link href="/test" rel="noopener noreferrer" className="flex items-center px-4 -mb-1">
+							<Link href="/404" rel="noopener noreferrer" className="flex items-center px-4 -mb-1">
 								<span className='py-3 hover:transition duration-150 border-b-2 border-transparent hover:border-gray-700'>My Links</span>
 							</Link>
 						</li>
