@@ -3,8 +3,8 @@ import axios from "axios";
 import Layout from "../components/common/Layout";
 export default function profile() {
   return (
-    <div className="pt-24 z-50">
-      <div className="flex flex-col w-64 h-screen px-4 py-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700">
+    <div className="pt-24 mx-52">
+      <div className="flex flex-col w-64 h-auto px-4 py-8 bg-white border rounded dark:bg-gray-900 dark:border-gray-700">
         <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white">Brand</h2>
 
         <div className="flex flex-col items-center mt-6 -mx-2">

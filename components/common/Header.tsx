@@ -9,7 +9,7 @@ export default function Header() {
 	const { data: Session } = useSession()
 	const [setSignOut, setSetSignOut] = useState(false)
 	return (
-		<header className="p-4 ring-1 ring-gray-300 fixed w-full dark:bg-gray-800 dark:text-gray-100">
+		<header className="p-4 ring-1 ring-gray-300 fixed bg-white w-full dark:bg-gray-800 dark:text-gray-100">
 			<div className="container  flex justify-between h-16 mx-auto">
 				<div className="flex">
 					<Link rel="noopener noreferrer" href="/" aria-label="Back to homepage" className="flex items-center p-2">
