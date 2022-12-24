@@ -23,7 +23,7 @@ export default function index() {
     e.preventDefault();
 
     const options = {
-      url: "http://localhost:3000/api/geturl",
+      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/geturl`,
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -38,7 +38,7 @@ export default function index() {
       .then((response) => {
         console.log("response", response.data.data );
         setError('');
-        setShortUrl(response.data.data.shortUrl ?  `http://localhost:3000/s/${response.data.data.shortUrl}` : '' )
+        setShortUrl(response.data.data.shortUrl ?  `${process.env.NEXT_PUBLIC_WEBSITE_URL}/s/${response.data.data.shortUrl}` : '' )
       })
       .catch((err) => {
         console.log("errrr", err.response.data);
