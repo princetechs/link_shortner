@@ -4,7 +4,7 @@ connectMongo();
 export default async (req: any, res: any) => {
 
   let url = JSON.parse(req.body).url ? JSON.parse(req.body).url : "";
-  console.log("test:-",JSON.parse(req.body).url,"sandip parida");
+  console.log("test:-",JSON.parse(req.body).url);
 
   let urlResponse = await Urls_model.findOne({ shortUrl: url });
 

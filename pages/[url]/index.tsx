@@ -1,30 +1,23 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import { NextRequest, NextResponse, userAgent } from 'next/server'
+import Urls_model from '../../models/urls';
 
 export default function index() {
-  const router = useRouter()
-  console.log(router.query.url);
-
- useEffect(() => {
-  // window.location.href = "http://www.w3schools.com";
-  // router.replace("http://www.w3schools.com")
-  
- 
- }, [])
- 
 
  
-  return (
-    <div >index{router.query.url}</div>
 
-  )
 }
 
 index.getInitialProps = async (context : any) => {
-  const { res,query } =  context;
-  if (query.url=="san")
-        {res.writeHead(301, { location: "https://google.com" } );
+  const { res,query,req } =  context;
+  let url = query.url;
+
+  let urlResponse = await Urls_model.findOne({ shortUrl: url });
+  console.log(urlResponse,"sanq:",query);
+  
+  if (query.url==urlResponse.shortUrl)
+        {res.writeHead(301, { location: urlResponse.url } );
         res.end();}
         else
         return {san:"sasa"}

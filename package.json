@@ -18,6 +18,7 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "styled-components": "^5.3.6",
+    "swr": "^2.0.0",
     "webpack": "^5.75.0"
   },
   "devDependencies": {
