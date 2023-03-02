@@ -29,7 +29,7 @@ export default function test() {
       .then((response) => {
         console.log("response", response.data.data);
         setError('');
-        setShortUrl(response.data.data.shortUrl ?  `${process.env.NEXT_PUBLIC_WEBSITE_URL}/s/${response.data.data.shortUrl}` : '' )
+        setShortUrl(response.data.data.shortUrl ?  `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${response.data.data.shortUrl}` : '' )
       })
       .catch((err) => {
         console.log("errrr", err.response.data);
