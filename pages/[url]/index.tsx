@@ -1,27 +1,24 @@
-import React, { useEffect } from 'react'
-import { useRouter } from 'next/router';
-import { NextRequest, NextResponse, userAgent } from 'next/server'
 import Urls_model from '../../models/urls';
 
-export default function index() {
+export default async function getServerSideProps(context:any){
+  const { query } =  context;
 
- 
-
-}
-
-index.getInitialProps = async (context : any) => {
-  const { res,query,req } =  context;
-  let url = query.url;
-
-  let urlResponse = await Urls_model.findOne({ shortUrl: url });
-  console.log(urlResponse,"sanq:",query);
-  
+  let url_code = query.url;  //get code from the browser url
+  let urlResponse = await Urls_model.findOne({ shortUrl: url_code }); //request the code and get the url
+  console.log(urlResponse,"here is the response........")
   if (query.url==urlResponse.shortUrl)
-        {res.writeHead(301, { location: urlResponse.url } );
-        res.end();}
-        else
-        return {san:"sasa"}
+        return {
+          redirect: {
+            destination: urlResponse.url,
+          },
+        };
+        else if (!urlResponse)
+        return {
+          redirect: {
+            destination: "/test",
+          },
+        };
       } 
+    
 
-  
  
