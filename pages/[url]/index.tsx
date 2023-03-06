@@ -1,6 +1,23 @@
 import Urls_model from '../../models/urls';
+import Head from "next/head";
 
-export default async function getServerSideProps(context:any){
+export default function LinkPage(){
+
+
+  return(
+    <>
+    <Head>
+    <meta property="og:title" content="link_shortner"/>
+    <meta property="og:site_name" content="site_name link_shortner" />
+    <meta property="og:description" content="descr iptionlink_shortner" />
+    <meta property="og:image" content="link_shortner" />
+  </Head>
+    </>
+ ) };
+  
+
+
+export  async function getServerSideProps(context:any){
   const { query } =  context;
 
   let url_code = query.url;  //get code from the browser url
