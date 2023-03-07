@@ -20,16 +20,15 @@ export default function LinkPage(){
 export  async function getServerSideProps(context:any){
   const { query } =  context;
 
-  // let url_code = query.url;  //get code from the browser url
-  // let urlResponse = await Urls_model.findOne({ shortUrl: url_code }); //request the code and get the url
-  // console.log(urlResponse,"here is the response........")
-  if (query.url)
+  let url_code = query.url;  //get code from the browser url
+  let urlResponse = await Urls_model.findOne({ shortUrl: url_code }); //request the code and get the url
+  if (query.url==urlResponse.shortUrl)
         return {
           redirect: {
-            destination: "https://techlye.com",
+            destination: urlResponse.url,
           },
         };
-        // else if (!urlResponse)
+        else if (!urlResponse)
         return {
           redirect: {
             destination: "/test",
