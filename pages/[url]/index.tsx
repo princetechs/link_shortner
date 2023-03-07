@@ -26,7 +26,7 @@ export  async function getServerSideProps(context:any){
   if (query.url)
         return {
           redirect: {
-            destination: "techlye.com",
+            destination: "https://techlye.com",
           },
         };
         // else if (!urlResponse)
