@@ -2,7 +2,6 @@
 
 ## A link Shortner App For All
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/princetechs/link_shortner)
 
 Clone the app first :-  `git clone git@github.com:princetechs/link_shortner.git`
 Then
